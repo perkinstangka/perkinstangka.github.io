@@ -46,12 +46,12 @@ hr{
  	padding: 5px;
 }
 
-.image a{
+a{
 	color: tomato;
 	text-decoration: none;
 }
 
-.image a:hover{
+a:hover{
 	color: tomato;
 	text-decoration: none;
 }
