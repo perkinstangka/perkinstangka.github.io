@@ -2,11 +2,6 @@ html{
 	position: relative;
 }
 
-body {
-	
-	margin-top: 10px;
-	margin-bottom: 110px;
-}
 
 .navbar{
 	background-color: #313131	;
@@ -54,11 +49,18 @@ section {
 }
 
 .image img{
- 	width: 70px;
- 	padding: 7px;
+ 	padding: 5px;
 }
 
+.image a{
+	color: tomato;
+	text-decoration: none;
+}
 
+.image a:hover{
+	color: tomato;
+	text-decoration: none;
+}
 
 footer {
 	position: absolute;
