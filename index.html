@@ -48,7 +48,7 @@
             
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right ">
-              <li><a href="#about">ABOUT</a></li>
+              <li><a href="#about" class="text-center">ABOUT</a></li>
               <li><a href="#skill">SKILL</a></li>
               <li><a href="#portofolio">PORTOFOLIO</a></li>
               <li><a href="#contact">CONTACT</a></li>
@@ -61,13 +61,13 @@
       <!-- jumbotron -->
             <div id="perkins"></div>
             <div class="jumbotron parallax text-center " style="font-family: Spicy Rice; background-image: url(background/1.png"><br><br><br><br><br><br><br><br><br>
-            <h1 style="font-family: Spicy Rice;">Hi My name is <br> Perkins Tangka <br> you can call me 
+            <h1 class="w3-animate-top " style="font-family: Spicy Rice;">Hi My name is <br> Perkins Tangka <br> you can call me 
               <span
                  class="txt-rotate"
                  data-period="2000"
                  data-rotate='[ "Perkins.", "Ekin.", "Kins.", "Ekins.", "Per" ]'></span>
             </h1><br>
-            <h2>I'am Admin this website</h2>
+            <h2 class="w3-animate-bottom ">I'am Admin this website</h2>
               </div>
             </div>
 
@@ -75,7 +75,7 @@
     <div class="w3-bar w3-border " >
       <a href="login.html" class="w3-bar-item w3-button">Sign-in</a>
       <a href="https://manadoprismaschool.github.io/" class="w3-bar-item w3-button ">School</a>
-      <a href="https://github.com/perkinstangka/perkinstangka.github.io" class="w3-bar-item w3-button">Github</a>
+      <a href="https://www.w3schools.com/">Inspiration</a>
       <a href="sign-up.html" class="w3-bar-item w3-button ">Sign-up</a>
       
     </div>
@@ -338,64 +338,7 @@
     
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-      var TxtRotate = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtRotate.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-  var that = this;
-  var delta = 300 - Math.random() * 100;
-
-  if (this.isDeleting) { delta /= 2; }
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
-
-  setTimeout(function() {
-    that.tick();
-  }, delta);
-};
-
-window.onload = function() {
-  var elements = document.getElementsByClassName('txt-rotate');
-  for (var i=0; i<elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-rotate');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
-    }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
-};
-    </script>
+ 
     <script src="js/script.js"></script>
     
   </body>
