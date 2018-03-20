@@ -12,6 +12,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/w3.css">
+   
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,25 +48,26 @@
             
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right ">
-
               <li><a href="#about">ABOUT</a></li>
               <li><a href="#skill">SKILL</a></li>
               <li><a href="#portofolio">PORTOFOLIO</a></li>
-               <li><a href="#contact">CONTACT</a></li>
+              <li><a href="#contact">CONTACT</a></li>
             </ul>
           </div>  
       </div>
     </nav>
     <!-- akhir navbar -->
-  
+    
       <!-- jumbotron -->
             <div id="perkins"></div>
-            <div class="jumbotron parallax text-center " style="background-image: url(background/1.png);   border-bottom: 10px solid #333; color: white;">
-               <div class=" text-center "><br><br><br><br><br><br><br><br><br><br><br>
-              <h1 class="w3-animate-top" style="font-family: shockers  ; ">Iam Perkins Tangka</h1>
-              <h2 class="w3-animate-top" style="font-family: shockers; ">-Welcome To My Website-</h2>  <br>
-              <h3 class="w3-animate-right" style="font-family: shockers; ">Iam Student in Manado Prisma School</h3><br>
-              <img class="w3-animate-bottom img-circle" style="height: 90px;" class="img-circle" src="background/web.jpg">
+            <div class="jumbotron parallax text-center " style="font-family: Spicy Rice; background-image: url(background/1.png"><br><br><br><br><br><br><br><br><br>
+            <h1 style="font-family: Spicy Rice;">Hi My name is Perkins Tangka <br> you can call me 
+              <span
+                 class="txt-rotate"
+                 data-period="2000"
+                 data-rotate='[ "Perkins.", "Ekin.", "Kins.", "Ekins.", "Per" ]'></span>
+            </h1><br>
+            <h2>I'am Admin this website</h2>
               </div>
             </div>
 
@@ -212,7 +214,7 @@
             
 
 
-         <div class="gallery" >
+         <div class="gallery parallax" >
           <h1 class="text-center" style="font-family: impact;">G A L E R Y</h1><hr><br><br>
          <div class="col-md-6 col-md-offset-1" > 
              
@@ -300,13 +302,13 @@
          </div>
 
           <br><br><br><br><br>      <br>  
-           <div class="w3-container w3-padding-64 col-md-8 col-md-offset-2 text-center" id="contact" ><br> <br>  <br>  <br>  <br>  <br>  <br>  
+           <div class="w3-container w3-padding-64 col-md-8 col-md-offset-2 text-center " id="contact" ><br> <br>  <br>  <br>  <br>  <br>  <br>  
     <h1 class="text-center ">Contact</h1><hr><br><br> <br>  
     <form action="/action_page.php" target="_blank">
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
        <p><input class="w3-input w3-padding-16" type="email" placeholder="email" required name="Email"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-      <p><button class="w3-button w3-light-grey w3-section " type="submit"><i class="glyphicon glyphicon-send w3-margin-right"></i>SEND MESSAGE</button></p>
+    <p><button class="w3-button w3-light-grey " type="submit"><i class="glyphicon glyphicon-send w3-margin-right"></i>SEND MESSAGE</button></p>
 
       <a href="#perkins" class="w3-button w3-light-grey glyphicon glyphicon-menu-up"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     </form>
@@ -336,6 +338,64 @@
     
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+    </script>
     <script src="js/script.js"></script>
     
   </body>

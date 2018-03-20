@@ -7,6 +7,16 @@ html{
 	background-color: #313131	;
 }
 
+h1,h2 {
+  font-weight: 200;
+  margin: 0.4em 0;
+}
+h1 { font-size: 3.5em; }
+h2 {
+  color: #eee;
+  font-size: 2em;
+}
+
 
 .jumbotron{
 	color: white;
