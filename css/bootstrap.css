@@ -224,7 +224,7 @@ th {
   h3 {
     page-break-after: avoid;
   }
-  .navbar {
+  .navbarr {
     display: none;
   }
   .btn > .caret,
@@ -4130,23 +4130,23 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.navbar {
+.navbarr {
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
-  .navbar {
+  .navbarr {
     border-radius: 4px;
   }
 }
 @media (min-width: 768px) {
-  .navbar-header {
+  .navbarr-header {
     float: left;
   }
 }
-.navbar-collapse {
+.navbarr-collapse {
   padding-right: 15px;
   padding-left: 15px;
   overflow-x: visible;
@@ -4183,7 +4183,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-top .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
-  max-height: 340px;
+  max-height: 200px;
 }
 @media (max-device-width: 480px) and (orientation: landscape) {
   .navbar-fixed-top .navbar-collapse,
