@@ -224,7 +224,7 @@ th {
   h3 {
     page-break-after: avoid;
   }
-  .navbarr {
+  .navbar {
     display: none;
   }
   .btn > .caret,
@@ -4130,23 +4130,23 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.navbarr {
+.navbar {
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
-  .navbarr {
+  .navbar {
     border-radius: 4px;
   }
 }
 @media (min-width: 768px) {
-  .navbarr-header {
+  .navbar-header {
     float: left;
   }
 }
-.navbarr-collapse {
+.navbar-collapse {
   padding-right: 15px;
   padding-left: 15px;
   overflow-x: visible;
