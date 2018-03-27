@@ -54,3 +54,7 @@ window.onload = function() {
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
   document.body.appendChild(css);
 };
+
+var bottom = $(document).height() - $(window).height();
+
+$(function() { $("#top").on('click', function() { var bottom = $(document).height() - $(window).height(); $("HTML, BODY").animate({ scrollTop: bottom }, 1000); }); });
