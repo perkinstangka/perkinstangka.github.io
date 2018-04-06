@@ -1,25 +1,3 @@
-<?php 
-  require 'functions.php';
-
-  if( isset($_POST["register"]) ){
- 
-    if( registrasi($_POST) > 0 ) {
-      echo "<script>
-        alert('user baru berhasil di tambahkan!')
-        <script>";
-
-          header("Location: index.php");
-          exit;
-    }else{
-      echo mysqli_error($conn);
-
-      
-    }
-
-  }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,29 +24,24 @@
           
       <div class="col-md-7 col-md-offset-1 w3-animate-zoom"> 
       <div class="container text-center img-rounded w3-animate-zoom" style="background-color: rgba(64,64,64,0.7); height: 550px;  margin-top: 60px;">
-        
+        <a style="float: left; color: aqua; margin-top: 30px;" href="https://perkinstangka.github.io/">HOME</a>
 
         <div class="isi" style="margin-top: 30px;">
-        <img class="img-circle" src="background/web.jpg" style="height: 100px; ">
+        <img class="img-circle" src="background/web.jpg" style="height: 150px; ">
              
   <h1>Sign-up</h1> 
-  <p>Silahkan mengisi dengan benar.</p>
-
-  <form class="form-inline" action="" method="post">
+  <p>Silahkan mengisi dengan benar.</p> 
+  <form class="form-inline">
     <div class="input-group">
+      <input type="Name" class="form-control" size="70" placeholder="User Name" required><br>  <br>  <br>  
+      <input type="email" class="form-control" size="70" placeholder="Email" required><br>  <br>  <br>  
+      <input type="Password" class="form-control" size=70" placeholder="Password" required>
+      <br>  <br>  <br>  
 
-      <input name="username" type="Name" class="form-control" size="70" placeholder="User Name" required><br>  <br> 
-
-      <input name="password" type="Password" class="form-control" size="70" placeholder="Password" required>
-      <br>  <br> 
-
-      <input name="password2" type="Password" class="form-control" size="70" placeholder="Konfirmasi Password" required>
-      <br>  <br>  
-
-      <button class="btn btn-info" name="register">Sign-up</button>
+      <a href="https://perkinstangka.github.io/"><button class="btn btn-info">Sign-up</button></a>
             <br>  <br>  
      
-      <a href="login.php" style="float: center; color: aqua;">have an account?</a>
+      <a href="login.html" style="float: center; color: aqua;">have an account?</a>
           
       </div>
     </div>
