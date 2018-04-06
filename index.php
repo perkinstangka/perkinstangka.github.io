@@ -1,3 +1,27 @@
+<?php 
+
+session_start();
+
+if( !isset($_SESSION["login"]) ) {
+  header("Location: login.php");
+  exit;
+}
+
+ require 'functions.php';
+ if( isset($_POST["kirim"]) ){
+
+    if( kirim($_POST) > 0 ) {
+      echo "<script>
+        alert('Berhasil di kirim!')
+        <script>";
+    }else{
+      echo mysqli_error($conn);
+    }
+
+  }
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,15 +46,15 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body >
 
 
-    <!-- navbar -->
-    <nav class="navbar-inverse">
+
+    <nav class="navbar-inverse" >
     
 
 
-          <!-- Button -->
+          
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
           data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -38,7 +62,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <!-- akhir button -->
+       
 
 
           <a href="#perkins" class="navbar-brand" style="margin-bottom: -12px;">Perkins Tangka     <img style="height: 30px;  margin-top: 1px; display: inline-block; margin-left: 5px;" class="img-circle" src="background/web.jpg" "></a>
@@ -49,6 +73,7 @@
               <li><a class="text-center" href="#skill">SKILL</a></li>
               <li><a class="text-center" href="#portofolio">PORTOFOLIO</a></li>
                <li><a class="text-center" href="#contact">CONTACT</a></li>
+               <li></span><a style="color: red;" class="text-center" href="logout.php"> LOGOUT</a></li>
             </ul>
           </div>  
     </nav>
@@ -56,7 +81,8 @@
     
       <!-- jumbotron -->
             <div id="perkins"></div>
-            <div class="jumbotron parallax text-center " style="font-family: Spicy Rice; background-image: url(background/1.png"><br><br><br><br><br><br><br><br><br>
+            <div class="jumbotron parallax text-center " style="font-family: Spicy Rice; background-image: url(background/1.png">
+              <br><br><br><br><br><br><br>
             <h1 data-aos="fade-down" style="font-family: Spicy Rice; transition: 2s;">Hi My name is <br> Perkins Tangka <br> you can call me <br>
               <span
                  class="txt-rotate"
@@ -65,6 +91,7 @@
             </h1><br>
             <h2 class="w3-animate-bottom ">I'am Admin this website</h2>
               </div>
+
             </div>
 
 
@@ -157,10 +184,10 @@
 
         <div id="skill"></div>
         <br><br>
-      <div class="jumbotron parallax" style="background-image: url(background/2.png); height: 750px; border-bottom: 5px solid #333; border-top: 5px solid #333; background-position: center;">
+      <div class="jumbotron parallax " style="background-image: url(background/2.png); height: 560px; border-bottom: 5px solid #333; border-top: 5px solid #333; background-position: center;">
         <h1 class="text-center" style="font-family: impact; transition: 1s;" data-aos="fade-down">S K I L L</h1>
         <hr>
-        <div class="container" data-aos="flip-down" style="transition: 2s;">
+        <div class="container col-md-6" data-aos="flip-down" style="transition: 2s;">
           <h2>Html &Css</h2>
           <div class="progress">
             <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
@@ -169,7 +196,7 @@
           </div>
         </div>
 
-        <div class="container" data-aos="flip-down" style="transition: 2.2s;">
+        <div class="container col-md-6" data-aos="flip-down" style="transition: 2.2s;">
           <h2>Bootstrap</h2>
           <div class="progress">
             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
@@ -178,7 +205,7 @@
           </div>
         </div>
 
-        <div class="container" data-aos="flip-down" style="transition: 2.4s;">
+        <div class="container col-md-6" data-aos="flip-down" style="transition: 2.4s;">
           <h2>Photoshop</h2>
           <div class="progress">
             <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
@@ -187,7 +214,7 @@
           </div>
         </div>
 
-         <div class="container" data-aos="flip-down" style="transition: 2.6s;">
+         <div class="container col-md-6" data-aos="flip-down" style="transition: 2.6s;">
           <h2>Illustrator</h2>
           <div class="progress">
             <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
@@ -196,7 +223,7 @@
           </div>
         </div>
 
-         <div class="container" data-aos="flip-down" style="transition: 2.8s;">
+         <div class="container col-md-6 col-md-offset-3" data-aos="flip-down" style="transition: 2.8s;">
           <h2>Network</h2>
           <div class="progress">
             <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
@@ -284,7 +311,7 @@
                 </div>
               </div>
             </div>
-              <br>
+              <br> 
          <div class="col-md-5 text-center" style="transition: 3s;">
           <img style="height: 90px;" src="image/1.png" data-aos="flip-down">
           <img style="height: 90px;" src="image/2.png" data-aos="flip-down">
@@ -302,11 +329,15 @@
           <br><br><br><br><br>      <br>  
            <div class="w3-container w3-padding-64 col-md-8 col-md-offset-2 text-center " id="contact" style="transition: 3s;"><br> <br>  <br>  <br>  <br>  <br>  <br>  
     <h1 class="text-center " data-aos="fade-in" style="transition: 2s;">Contact</h1><hr><br><br> <br>  
-    <form action="index.html" method="post">
-      <p><input class="w3-input w3-padding-16" type="text" style="transition: 1.5s;" data-aos="flip-up" placeholder="Name" required name="Name"></p>
-       <p><input class="w3-input w3-padding-16" type="email" style="transition: 1.5s;" data-aos="flip-up" placeholder="email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" style="transition: 1.5s;" data-aos="flip-up" placeholder="Message \ Special requirements" required name="Message"></p>
-    <p><button class="w3-button w3-light-grey " style="transition: 1.5s;" data-aos="flip-up" type="submit"><i class="glyphicon glyphicon-send w3-margin-right"></i>SEND MESSAGE</button></p>
+    <form action="" method="post">
+
+      <p><input class="w3-input w3-padding-16" type="text" style="transition: 1.5s;" data-aos="flip-up" placeholder="Name" required name="nama"></p>
+
+       <p><input class="w3-input w3-padding-16" type="email" style="transition: 1.5s;" data-aos="flip-up" placeholder="email" required name="email"></p>
+
+      <p><input class="w3-input w3-padding-16" type="text" style="transition: 1.5s;" data-aos="flip-up" placeholder="Message \ Special requirements" required name="message"></p>
+
+    <p><button name="kirim" class="w3-button w3-light-grey " style="transition: 1.5s;" data-aos="flip-up" type="submit"><i class="glyphicon glyphicon-send w3-margin-right"></i>SEND MESSAGE</button></p>
 
       <a href="#perkins" class="w3-button w3-light-grey glyphicon glyphicon-menu-up"><i class="fa fa-arrow-up w3-margin-right" data-aos="fade-in" ></i>To the top</a>
     </form>
@@ -345,7 +376,7 @@
 
  
     <script src="js/script.js"></script>
-    
+   
   </body>
 </html>
 
