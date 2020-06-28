@@ -1,0 +1,145 @@
+body{
+    text-align: center;
+    margin: 0;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-style: normal;
+}
+
+
+
+/* khusus */
+.profile {
+    border-color: white;
+    border-width: 7px;
+    border-style: solid;
+    border-radius: 50%;   
+}
+
+.judul{
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: #333;
+    font-size: 2rem;
+}
+
+.circle{
+    border-color: tomato;
+    border-width: 4px;          
+    border-style: solid;
+    border-radius: 50%;  
+    width: 30px;
+ 
+}
+@media screen and (max-width: 400px){
+    .circle{
+        width: 20px;
+        border-color: tomato;
+        border-width: 2px;          
+        border-style: solid;
+        border-radius: 50%; 
+    }
+}
+
+/* tag a */
+.aa{
+	color: white;
+    text-decoration: none;
+}
+
+.aa:hover{
+	color: tomato;
+	text-decoration: none;
+}
+
+
+.bio{
+    background-color: white;  
+    border-radius: 10px; 
+    text-align: center;
+}
+@media screen and (min-width: 500px){
+    .bio{  
+    width: 21rem;  
+  
+    }
+}
+
+@media screen and (max-width: 500px){
+    .bio{  
+    width: 20rem;  
+  
+    }
+}
+
+
+@media screen and (min-width: 600px){
+    .gal{
+        width: 170px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+}
+
+
+.social-media{
+    position: relative;
+    top: 120px; 
+    padding:10px;
+    word-spacing: 15px;
+}
+
+@media screen and (max-width: 400px){
+    .social-media{
+        padding:10px; 
+        word-spacing: 10px;
+    }
+}
+
+
+
+/* Tambahan */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.latar {
+    color: white;
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+hr{
+	width: 250px;
+	border-top: 3px solid #999;
+        
+}
+
+.kotak {
+    background-color: #7bd0c1;
+    position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+    
+}
+
+.input{
+    padding:8px;
+    display:block;
+    border:none;
+    border-bottom:1px solid #ccc;
+    width:100%
+}
+
+@media (min-width: 900px){
+    .kotak{
+        float: left;
+    }
+    .kotak{
+        width: 30%;
+    }
+}
+
