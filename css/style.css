@@ -29,7 +29,7 @@ body{
     width: 30px;
  
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 600px){
     .circle{
         width: 20px;
         border-color: tomato;
@@ -63,7 +63,7 @@ body{
     }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 501px){
     .bio{  
     width: 20rem;  
   
