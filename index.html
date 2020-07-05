@@ -6,12 +6,15 @@
     <title>Perkins Profile</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="">
 
     <!-- Top -->
-
-    <header>
+   
+    <header >
     <div style="background-image: url(background/1.png);" class="parallax latar" >
+
+      
+  <p id="themeInfo">Light!</p>
 
         <section style="position: relative; top: 100px;">
             <img src="img/profile.png" alt="author" class="profile" style="width: 10rem; ">
@@ -38,12 +41,15 @@
     </div>
     </header>
 
-    <br><br>
+   <br>
 
 
     <!-- about -->
 
   <div >
+    
+    <button onclick="toggleDarkMode()">Change Dark Mode</button>
+    <br><br>
     <section id="about">     
                 <h1 class="judul"> ABOUT</h1>
                 <hr width="100">
@@ -59,23 +65,24 @@
 
     <br><br><br>
 
-    <div style="background-image: url(background/gif.gif); background-position: center; " align="center" class="parallax">
+    <div style=" background-image: url(background/gif.gif); background-position: center; " align="center" class="parallax ">
       <br><br><br>
-       <section id="biodata" class="bio" >
+       <section id="biodata" class="bio" style="background-color: #333333; border:2px solid white;">
         <br>
-          <h1 class="judul">BIODATA</h1>
-          <p>
+          <h1 class="judul" style="color: white;">BIODATA</h1>
+          <hr style="border-top: 3px solid white;">
+          <h4>
             Nama : Perkins Tangka
-          </p>
-          <p>
+          </h4>
+          <h4>
             TTL : Bitung, 22 Oktober 2001
-          </p>
-          <p>
+          </h4>
+          <h4>
             Umur : 18 Tahun
-          </p>
-          <p>
+          </h4>
+          <h4>
             Kuliah : Universitas Klabat
-          </p>
+          </h4>
           <br><br>
      </section>
      <br><br><br>
@@ -206,8 +213,7 @@
   </section>  
 </div>
   <br><br><br>
-  <footer style="background-color: slategrey; height: 100%; width: 500px;">
-
-  </footer>
+  <script src="js/index.js"></script>
 </body>
+
 </html>

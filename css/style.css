@@ -15,6 +15,10 @@ body{
     border-radius: 50%;   
 }
 
+h4{
+    color: white;
+}
+
 .judul{
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     color: #333;
@@ -95,7 +99,6 @@ body{
 }
 
 
-
 /* Tambahan */
 .parallax {
     background-attachment: fixed;
@@ -143,3 +146,12 @@ hr{
     }
 }
 
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  
